@@ -20,19 +20,7 @@ public class splash extends Activity{
         v=findViewById(R.id.videoView);
         Uri video=Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bblank);
         v.setVideoURI(video);
-//        v.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mediaPlayer) {
-//                startNextMatchingActivity();
-//            }
-//
-//            private void startNextMatchingActivity() {
-//                if (isFinishing())
-//                    return;
-//                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                finish();
-//            }
-//        });
+
         v.start();
 
         handler=new Handler();
