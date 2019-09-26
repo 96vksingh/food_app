@@ -13,7 +13,7 @@ public class register extends AppCompatActivity {
 
     Button kk;
     EditText e1,e2,e3;
-    String s1,s2;
+    public String s1,s2,s3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,14 @@ public class register extends AppCompatActivity {
 
                 s1=e1.getText().toString();
                 s2=e2.getText().toString();
+                s3=e3.getText().toString();
+                MainActivity.uu=s1;
+                MainActivity.pp=s3;
 
-                regdetail(s1, s2);
+                regdetail(s1, s2,s3);
 
                 Intent h = new Intent(getApplicationContext(),MainActivity.class);
+
                 startActivity(h);
 
             }
@@ -44,7 +48,7 @@ public class register extends AppCompatActivity {
 
     }
 
-    private void regdetail(String name, String number) {
-        new sharepref(this).regdetail(name, number);
+    private void regdetail(String name, String number,String pas) {
+        new sharepref(this).regdetail(name, number,pas);
     }
 }

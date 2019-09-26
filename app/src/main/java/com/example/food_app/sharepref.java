@@ -19,11 +19,12 @@ public class sharepref {
         editor.commit();
     }
 
-    public void regdetail(String name, String number) {
+    public void regdetail(String name, String number,String ppas) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("Registerdetails", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("name", name);
         editor.putString("number", number);
+        editor.putString("pass", ppas);
         editor.commit();
     }
 
@@ -37,6 +38,19 @@ public class sharepref {
         boolean isEmailEmpty = sharedPreferences.getString("Email", "").isEmpty();
         boolean isPasswordEmpty = sharedPreferences.getString("Password", "").isEmpty();
         return isEmailEmpty || isPasswordEmpty;
+    }
+
+    public void viewdata() {
+        SharedPreferences s = context.getSharedPreferences("Registerdetails",context.MODE_PRIVATE);
+
+            String g1=s.getString("name","");
+            String g2=s.getString("number","");
+            String s3 = "name is "+g1+" and number is "+g2;
+            MainActivity.data=s3;
+
+
+
+
     }
 
 }

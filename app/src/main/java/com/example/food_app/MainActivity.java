@@ -3,6 +3,7 @@ package com.example.food_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,16 +13,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    static String data;
+    static String uu,pp;
     Button login;
     EditText u,p;
     TextView sign;
     String u1,p1;
     CheckBox c;
+    String f_name;
+    String f_no;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         c=findViewById(R.id.checkBox);
 
@@ -42,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 u1=u.getText().toString();
                 p1=p.getText().toString();
-                if(p1.equals("123456") && u1.equals("vk")){
+
+                if(p1.equals(pp) && u1.equals(uu)){
                     Toast.makeText(getApplicationContext(),"login success",Toast.LENGTH_SHORT).show();
                     if (c.isChecked()){
                         saveLoginDetails(u1, p1);
@@ -69,4 +77,6 @@ public class MainActivity extends AppCompatActivity {
     private void saveLoginDetails(String email, String password) {
         new sharepref(this).saveLoginDetails(email, password);
     }
+
+
 }
