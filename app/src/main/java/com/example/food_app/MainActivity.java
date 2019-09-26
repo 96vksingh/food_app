@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         saveLoginDetails(u1, p1);
                     startHomeActivity();
                 }
+                    startHomeActivity();
                 }else {
                     Toast.makeText(getApplicationContext(),"invalid login",Toast.LENGTH_SHORT).show();
                 }
