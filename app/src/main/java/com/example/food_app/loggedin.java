@@ -8,10 +8,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class loggedin extends AppCompatActivity {
+import com.like.LikeButton;
+import com.like.OnLikeListener;
+
+
+public class loggedin extends AppCompatActivity implements OnLikeListener{
 
     Button b2,b3;
+    LikeButton h1,h2,h3,h4;
 
     public static final String PREFS_NAME = "LoginDetails";
 
@@ -19,6 +25,11 @@ public class loggedin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loggedin);
+
+        h1=findViewById(R.id.star_button1);
+        h2=findViewById(R.id.star_button2);
+        h3=findViewById(R.id.star_button3);
+        h4=findViewById(R.id.star_button4);
 
         b2=findViewById(R.id.button2);
         b3=findViewById(R.id.button4);
@@ -32,6 +43,10 @@ public class loggedin extends AppCompatActivity {
                 f1.commit();
             }
         });
+
+        h1.setOnLikeListener(this);
+
+
 
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,5 +74,17 @@ public class loggedin extends AppCompatActivity {
     private void viewdat() {
 
         new sharepref(this).viewdata();
+    }
+
+    @Override
+    public void liked(LikeButton h1) {
+
+        Toast.makeText(getApplicationContext(),"liked",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void unLiked(LikeButton h2) {
+
     }
 }
