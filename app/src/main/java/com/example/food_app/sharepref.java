@@ -46,7 +46,7 @@ public class sharepref {
 
             String g1=s.getString("name","");
             String g2=s.getString("number","");
-            String s3 = "name is "+g1+" and number is "+g2;
+            String s3 = "name: "+g1+"\n number: "+g2;
             MainActivity.data=s3;
 
 

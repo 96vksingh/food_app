@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 
 public class fragment1 extends Fragment {
+    Handler handler;
+    TextView t1;
 
 
 
@@ -28,10 +31,23 @@ public class fragment1 extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        TextView t1;
+
+
+
         t1=getView().findViewById(R.id.textView);
+        t1.setVisibility(View.VISIBLE);
         Toast.makeText(getContext(),MainActivity.data,Toast.LENGTH_SHORT).show();
         t1.setText(MainActivity.data);
+
+        handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                t1.setVisibility(View.INVISIBLE);
+            }
+        },5000);
+
+
     }
 
 
