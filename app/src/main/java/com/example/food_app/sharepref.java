@@ -56,7 +56,7 @@ public class sharepref {
     public void favfood(StringBuilder st) {
         SharedPreferences s = context.getSharedPreferences("fav_food",context.MODE_PRIVATE);
         SharedPreferences.Editor editor = s.edit();
-        editor.putString("fav", st);
+        editor.putString("fav", String.valueOf(st));
         editor.commit();
 
     }

@@ -22,9 +22,7 @@ public class loggedin extends AppCompatActivity implements OnLikeListener{
     Button b2,b3;
     Button oo;
     LikeButton h1,h2,h3,h4;
-    public int food1_like,food2_like,food3_like,food4_like;
-    public String p;
-    String po1,po2,po3,po4;
+
     int f1c=0,f2c=0,f3c=0,f4c=0;
     TextView tt1,tt2,tt3,tt4;
     int total;
