@@ -37,7 +37,7 @@ public class register extends AppCompatActivity {
                 MainActivity.uu=s1;
                 MainActivity.pp=s3;
 
-                regdetail(s1, s2,s3);
+                //regdetail(s1, s2,s3);
 
                 Intent h = new Intent(getApplicationContext(),MainActivity.class);
 
@@ -48,7 +48,5 @@ public class register extends AppCompatActivity {
 
     }
 
-    private void regdetail(String name, String number,String pas) {
-        new sharepref(this).regdetail(name, number,pas);
-    }
+
 }

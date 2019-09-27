@@ -19,12 +19,13 @@ public class sharepref {
         editor.commit();
     }
 
-    public void regdetail(String name, String number,String ppas) {
+    public void regdetail(String name, String number,String ppas,String add) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("Registerdetails", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("name", name);
         editor.putString("number", number);
         editor.putString("pass", ppas);
+        editor.putString("address", add);
         editor.commit();
     }
 
